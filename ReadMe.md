@@ -4,7 +4,7 @@
 
 令 Bash 类环境拥有彩虹般美丽的命令提示符。
 
-![An example of mine](./docs/images/bash-rainbow-prompt-example-wulechuan.png)
+![An example of mine](./docs/illustrates/bash-rainbow-prompt-example-wulechuan.png)
 
 作者：[wulechuan@live.com](mailto:wulechuan@live.com)
 

@@ -4,7 +4,8 @@
 
 令 Bash 类环境拥有彩虹般美丽的命令提示符。
 
-![An example of mine](./docs/illustrates/bash-rainbow-prompt-example-wulechuan.png)
+![An example of mine in 256 colors](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-256-colors.png)
+![An example of mine in 16 colors](./docs/illustrates/bash-rainbow-prompt-example-wulechuan.png)
 
 作者：[wulechuan@live.com](mailto:wulechuan@live.com)
 
@@ -49,8 +50,14 @@
 
 ## 色值表的用法
 
-色值表的使用因环境而异。有些环境直接采用该文件，另有一些环境，例如
-Windows Console，无法直接应用该文件，而必须手工将文件中个颜色值逐一取出，填入配置对话框中。
+在 `16 色模式`的终端下，或者在 `256 色模式`的终端下仅打算利用标准的 16
+色表的情况下，你或许须修订系统默认的色值表，形成自己喜爱的配色主题，使最终效果更美观。
+
+在 `256 色模式`终端下，如果采用了 256 色的【命令提示符】，则不必修订色值表。因为
+256 色模式的色值表是固定不变的，无从修改。
+
+16 色色值表的使用因环境而异。有些环境直接采用 `.mintty` 文件；另有一些环境，例如
+Windows Console，无法直接应用该类文件，而必须手工将文件中个颜色值逐一取出，填入配置对话框中。
 
 ### 在【Cygwin for Windows】中的用法
 

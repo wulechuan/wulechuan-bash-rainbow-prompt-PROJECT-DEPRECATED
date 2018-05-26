@@ -14,7 +14,7 @@ fi
 ___tempDetectGitPS1Function___=`declare -f __git_ps1 > /dev/null; echo $?`
 if [ $___tempDetectGitPS1Function___ -ne 0 ]; then
 	function __git_ps1 { # This is a simplified version of __git_ps1 if we have no GNU source code.
-		git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ppp\1/'
+		git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
 	}
 fi
 unset ___tempDetectGitPS1Function___
@@ -23,21 +23,22 @@ unset ___tempDetectGitPS1Function___
 function _customize_prompt_with_git_branch_info_in_256_colors_ {
 	PS1=`clear-color`"\n"                         # New line
 
-	PS1=$PS1"\e[38;5;16;48;5;219m`date +"%m-%d"`" # Month & Day
-	PS1=$PS1"\e[38;5;16;48;5;211m`date +"%H:%M"`" # Hour & Minute
-	PS1=$PS1"\e[38;5;16;48;5;216m "               # A <space>
+	PS1=$PS1"\e[38;5;16;48;5;210m`date +"%m-%d"`" # Month & Day
+	PS1=$PS1"\e[38;5;16;48;5;216m "               # A <Space>
+	PS1=$PS1"\e[38;5;16;48;5;229m`date +"%H:%M"`" # Hour & Minute
+	PS1=$PS1"\e[38;5;16;48;5;120m "               # A <space>
 
-	PS1="${PS1}\e[38;5;16;48;5;222m\u"            # user
-	PS1="${PS1}\e[38;5;16;48;5;49m@"              # @
-	PS1="${PS1}\e[38;5;16;48;5;51m\h"             # host
+	PS1="${PS1}\e[38;5;16;48;5;49m$USERNAME"      # user
+	PS1="${PS1}\e[38;5;16;48;5;87m@"              # @
+	PS1="${PS1}\e[38;5;16;48;5;45m\h"             # host
 	PS1="${PS1}\e[38;5;16;48;5;39m:"              # :
-	PS1="${PS1}s\e[38;5;16;48;5;135m\w"            # current working directory
+	PS1="${PS1}\e[38;5;16;48;5;69m\w"             # current working directory
+	PS1=$PS1"\e[38;5;16;48;5;63m "                # A <space>
 
 	PS1=$PS1`__get_git_ps1_or_empty_string_in_256_colors__` # git branch info
 
-	PS1=$PS1`clear-color`
-	PS1=$PS1'\n'                                  # New line
-	PS1=$PS1'$ '                                  # last prompt sign: $<space>
+	PS1=$PS1`clear-color`'\n'                     # New line
+	PS1=$PS1'> '                                  # last prompt sign: $<space>
 	PS1=$PS1`clear-color`
 }
 
@@ -47,11 +48,11 @@ function _customize_prompt_with_git_branch_info_in_16_colors_ {
 	local timestampe=`date +"%m-%d %H:%M"`
 	PS1=$PS1`colorful "$timestampe" textBrightBlack`" " # timestamp
 
-	PS1=$PS1`colorful "\u"   textBlack       bgndCyan`      # user
-	PS1=$PS1`colorful "@"    textBlack       bgndGreen`     # @
-	PS1=$PS1`colorful "\h"   textBlack       bgndYellow`    # host
-	PS1=$PS1`colorful ":"    textBrightBlack bgndBrightRed` # :
-	PS1=$PS1`colorful "\w"   textBlack       bgndMagenta`   # current working directory
+	PS1=$PS1`colorful "\u"  textBlack       bgndCyan`      # user
+	PS1=$PS1`colorful "@"   textBlack       bgndGreen`     # @
+	PS1=$PS1`colorful "\h"  textBlack       bgndYellow`    # host
+	PS1=$PS1`colorful ":"   textBrightBlack bgndBrightRed` # :
+	PS1=$PS1`colorful "\w"  textBlack       bgndMagenta`   # current working directory
 
 	PS1=$PS1`__get_git_ps1_or_empty_string_in_16_colors__`
 

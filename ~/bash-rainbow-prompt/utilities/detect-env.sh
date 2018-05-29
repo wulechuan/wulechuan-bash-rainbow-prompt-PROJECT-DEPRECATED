@@ -1,3 +1,8 @@
+envIsWSL=0
+envIsLinux=0
+envIsCygwin=0
+envIsGitBash=0
+
 function getCurrentUserName {
     local currentUserName=$USERNAME
 

@@ -6,17 +6,17 @@
 
 作者：吴乐川 [wulechuan@live.com](mailto:wulechuan@live.com)
 
-![作者提供的示例（256色模式下）](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-256-colors.png)  \
-作者提供的示例（256色模式下）
+![作者提供的示例（256 色模式下）](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-256-colors.png)  \
+作者提供的示例（256 色模式下）
 
-![作者提供的示例（16色模式下）](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-16-colors.png)  \
-作者提供的示例（16色模式下），色值表已被自定义，因此看起来较艳丽。
+![作者提供的示例（16 色模式下）](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-16-colors.png)  \
+作者提供的示例（16 色模式下），色值表已被自定义，因此看起来较艳丽。
 
 -----
 
 本工具用以在兼容 Bash 的【命令行环境】构建如图所示的彩色【命令提示符】。
 
-它采用 Bash 语法，因此适用于 Linux 终端、苹果 macOSX 终端、Windows Subsystem for Linux (WSL) 环境，以及各类 Linux【终端模拟器】（如 GitBash 和 Cygwin ）。
+它采用 Bash 语法，因此适用于 Linux 终端、苹果 macOSX 终端、Windows Subsystem for Linux (WSL) 环境，以及各类【Linux 终端模拟器】（如 GitBash 和 Cygwin ）。
 
 它**不**适用于微软 Windows CMD，也**不**适用于微软 Windows
 PowerShell，或微软针对 Linux 平台推出的
@@ -25,22 +25,22 @@ PowerShell。因为 CMD 与 PowerShell 二者的的语法与 Bash 大相径庭�
 > 另注：
 > 
 > 在 Windows 平台上，【Windows 控制台】程序通常被粗略的（或者说错误的）视为
-> CMD 和 PowerShell。实际上，应该说，CMD 和 PowerShell 运行于【Windows
+> CMD 和 PowerShell。实际上，应该说 CMD 和 PowerShell 运行于【Windows
 > 控制台】内。或者更准确的说，二者仅将【Windows
 > 控制台】作为二者的输入输出界面。毕竟，计算机软件领域“内”与“外”的概念往往仅是借喻罢了。
 
 
 # 特色
 
-1.  【提示符】的字符串主体恰好是创建【ssh】连接所须的字符串。方便我们构建【ssh】连接。
+1.  【提示符】的字符串【主体】恰好是创建【ssh】连接所须的字符串，便于命令行用户构建【ssh】连接。
 2.  显示日期和时间戳，以便追踪历史命令。
-3.  独特的彩色条带，在命令历史记录之间形成天然的视觉分隔带，这便于终端用户回溯历史时，借助视觉本能加速探寻信息。
+3.  独特的彩色条带，在命令历史记录之间形成天然的视觉分隔带，便于终端用户回溯历史时，借助视觉本能加速探寻信息。
 4.  美观（但这很主观，每个人看法不尽相同）。
 
 
 # 安装
 
-1.  将整本项目仓库内的`~`文件夹内 `bash-rainbow-prompt` 文件夹复制到系统的 `~` 文件夹下。
+1.  将整【本项目仓库内的 `~` 文件夹】内的 `bash-rainbow-prompt` 文件夹复制到系统或模拟器环境的 `~` 文件夹下。
 
 2.  如果 `~` 文件夹下不存在 `.bash_profile` 则创建之。
     > 注意文件名要以英文句点 `.` 开头。
@@ -52,6 +52,11 @@ PowerShell。因为 CMD 与 PowerShell 二者的的语法与 Bash 大相径庭�
     ```
 
     保存该文件。
+
+    > 注意：如果你很熟悉 Bash 类环境的配置，且已经配置好令你的
+    > `~/.bash_profile` 加载 `~/.bashrc`
+    > 文件，则对于上述 2、3 两个步骤，亦可以改为修订
+    > `~/.bashrc` 文件，而令你已有的`~/.bash_profile` 保持不变。
 
 4.  令上述配置生效，有两种方法：
 
@@ -106,7 +111,7 @@ git 分支最新的状态细节。这将导致 Bash 命令提示符的显示明�
 
     该变量用于控制是否借助 `git-prompt.sh` 来显示当前 git 分支的状态细节。
 
-    允许的取值：【`yes`】或任何【非 `yes`】的取值。该值亦可被省略（即【无定义】），此时等同于【非 `yes`】值。
+    允许的取值：任何值均可。其中，仅【`yes`】代表“启用‘显示 git 分支状态细节’的功能”。该变量亦可被省略（即【无定义】），此时等同于【非 `yes`】值。
 
 
 
@@ -132,7 +137,7 @@ git 分支最新的状态细节。这将导致 Bash 命令提示符的显示明�
 
 在 `256 色模式`终端下，如果采用了 256
 色的【命令提示符】，则**不必修订色值表**，该色值表文件也毫无用处。因为
-256 色模式的色值表是固定不变的，**无从修改**。
+256 色模式终端的 256 色色值表是固定不变的，**无从修改**。
 
 在 `8 色模式`的终端（但实际上提供 16 种颜色）下，**或者**在 `256 色模式`的终端下**仅打算利用标准的 16
 色表**的情况下，你不妨修订系统默认的色值表，形成自己喜爱的配色主题，使最终效果更美观。
@@ -142,8 +147,9 @@ git 分支最新的状态细节。这将导致 Bash 命令提示符的显示明�
 
 ### 色值表的用法
 
-16 色色值表的使用因环境而异。有些环境直接采用 `.mintty` 文件；另有一些环境，例如
-Windows 控制台，无法直接应用该类文件，而必须手工将文件中各颜色值逐一取出，填入配置对话框中。
+16 色色值表的使用因环境而异。有些环境可以直接采用置于特定文件夹中的
+`.minttyrc` 文件并生效；另有一些环境，例如 Windows
+控制台，则无法直接应用该类文件，而必须手工将文件中各颜色值逐一取出，填入配置对话框中。
 
 #### 色值表在【Cygwin for Windows】中的用法
 
@@ -171,9 +177,7 @@ Windows 控制台，无法直接应用该类文件，而必须手工将文件中
 #### 色值表在【Windows 控制台】中的用法
 
 尽管我的这一“bash-rainbow-prompt”工具**并不**适用于微软的 Windows CMD 或 PowerShell
-环境，我提供的色值表却可以用于配置微软 Windows 控制台程序。只不过，配置过程须手工完成。
-
-该法将同时影响 CMD 和 PowerShell。
+环境，我提供的色值表却可以用于配置微软 Windows 控制台程序。只不过配置过程须手工完成。而且不难想象，该动作将同时影响 CMD 和 PowerShell。
 
 1.  运行 CMD 或 PowerShell，以打开一个【Windows 控制台】窗口。
 

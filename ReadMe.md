@@ -4,23 +4,23 @@
 
 Bring rainbows into your bash compatible environments.
 
-![An example of mine in 256 colors](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-256-colors.png)  \
-An example of mine in 256 colors
+![An example of mine in 256-colored terminal](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-256-colors.png)  \
+An example of mine in 256-colored terminal
 
-![An example of mine in 16 colors](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-16-colors.png)  \
-An example of mine in 16 colors (Color palette has been customized)
+![An example of mine in 16-colored terminal](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-16-colors.png)  \
+An example of mine in 16-colored terminal (Color palette has been customized)
 
 Author: 吴乐川 (Wu Lechuan) [wulechuan@live.com](mailto:wulechuan@live.com)
 
 ------
 
-This is a tool for building a colorful `prompt` in
+This is a tool for building a colorful **prompt string** in
 a command line interface (CLI) environment.
 
 It obeys the Bash syntax, thus applies to any Linux Terminal,
 Apple macOSX terminal,
 the Microsoft Windows Subsystem for Linux (WSL) environment,
-as well as all kinds of Linux Terminal Simulators like GitBash and Cygwin.
+as well as all kinds of Linux Terminal Simulators such as GitBash and Cygwin.
 
 It does **NOT** apply to Microsoft Windows CMD,
 or Microsoft Windows PowerShell,
@@ -31,7 +31,7 @@ different from that of a Bash compatible environment.
 
 
 
-# Chinese version of this Document
+# Chinese Version of this Document
 
 中文文档[在此](./ReadMe.zh-CN.md)。
 
@@ -41,12 +41,15 @@ different from that of a Bash compatible environment.
 
 # Features
 
-1.  The chief part of the prompt string happens to be an SSH connection string.
+1.  The chief part of the prompt string happens to be
+    an SSH connection string. So you can just copy
+    that part to easily create an SSH connection.
 2.  The prefixed Date and timestamp is helpful
     on tracing back our command history.
-1.  The distinct rainbow strips, naturally form visual blocks, helping
-    human beings to distinguish scopes from command record to record. 
-3.  Beautiful (but your might NOT agree with that).
+3.  The distinct rainbow strips, naturally form
+    visual blocks between them, helping we human beings
+    to distinguish scopes of command from record to record.
+4.  Beautiful (but your might NOT agree with that).
 
 
 # Installation
@@ -55,7 +58,8 @@ different from that of a Bash compatible environment.
     `~` folder (or "directory" if you prefer).
 
 1.  If your bash `~` folder doesn't contain a file named
-    `.bash_profile` yet, create one text file with that name by executing:
+    `.bash_profile` yet, create a text file with that name
+    by executing:
     ```sh
     touch ~/.bash_profile
     ```
@@ -72,11 +76,14 @@ different from that of a Bash compatible environment.
     Save your modifications.
 
 
-1.  Make things happen. There're 2 senarios which ends up 2 different ways.
+1.  Make things happen. There're 2 senarios:
 
-    1.  上述配置在任何**新打开**的 Bash 窗口均会**自动生效**。
+    1.  For any newly opened Bash window from that moment on,
+        this set of scripts automatically take effects.
+        There is nothing you need to do.
 
-    2.  对于**已经打开**的 Bash 窗口，可在其中执行：
+    1.  For those already opened Bash windows at the moment,
+        simply execute this line below:
 
         ```sh
         exec bash -l
@@ -91,7 +98,7 @@ as long as you are working on a folder that is configured
 as a part of a git repository.
 
 This nice optional feature needs a well known utility named
-`git-prompt.sh`, which is licensed by GNU GPL 2.0.
+`git-prompt.sh`, which is licensed under GNU GPL 2.0.
 
 While I'm not going to license my tool
 under any licensing system (but this means it happens to match a
@@ -132,8 +139,10 @@ There is only one configurable item at present:
 
     This variable controls whether or not we shall use the `git-prompt.sh`.
 
-    Possible values: "`yes`" or any "non `yes`" value.
-    It is allowed to be even omitted at all, which means "non `yes`".
+    Possible values: any value is allowed,
+    but only the `"yes"` means
+    "yes please enable showing details of git branch state".
+    It is allowed to be even omitted at all, which means `"no"`.
 
 
 
@@ -173,8 +182,11 @@ Because the built-in color table is not adjustable there.
 ### How to use (apply) a color palette
 
 The way to apply a color palette file varies according to the target environments.
-Some can utilize the provided `.mintty` file directly without any pain.
-Others not, so you have to apply color values one by one manually.
+Some can utilize the provided `.minttyrc` file directly
+without any pain, as long as the `.minttyrc` file is
+located in the correct folder.
+Others can not,
+so you have to apply color values one by one manually.
 
 #### Use the color palette file in Cygwin for Windows
 

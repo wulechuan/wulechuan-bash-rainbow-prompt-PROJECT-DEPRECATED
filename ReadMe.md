@@ -5,14 +5,21 @@
 Bring rainbows into your bash compatible environments.
 
 ![An example of mine in 256-colored terminal](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-256-colors.png)  \
-An example of mine in 256-colored terminal
+An example of mine in 256-colored terminal.
+
+<br>
+
+![An example of mine in 256-colored terminal](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-256-colors-in-text.png)  \
+An example of mine in 256-colored terminal. Colors are in texts instead of background.
+
+<br>
 
 ![An example of mine in 16-colored terminal](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-16-colors.png)  \
-An example of mine in 16-colored terminal (Color palette has been customized)
+An example of mine in 16-colored terminal. Color palette has been customized.
 
-Author: 吴乐川 (Wu Lechuan) [wulechuan@live.com](mailto:wulechuan@live.com)
 
-------
+<br>
+
 
 This is a tool for building a colorful **prompt string** in
 a command line interface (CLI) environment.
@@ -27,6 +34,10 @@ or Microsoft Windows PowerShell,
 or Microsoft PowerShell for Linux.
 Because the syntax of either CMD or PowerShell is completely
 different from that of a Bash compatible environment.
+
+<br>
+
+Author: 吴乐川 (Wu Lechuan) [wulechuan@live.com](mailto:wulechuan@live.com)
 
 
 
@@ -128,14 +139,19 @@ providing details of a git branch, it **CAN** be very slow in situations.
 
 # Configuration
 
-The only configuration file of this tool locates:
+## The Configuration File
+The only configuration file of this tool is:
 ```sh
-<This Repository>/~/bash-rainbow-prompt/config.sh
+<This Repository>/~/bash-rainbow-prompt/configurations.sh
 ```
 
-There is only one configurable item at present:
+You may put some configuration entries in the file
+to customize the look of your prompt.
 
--  `shouldUseDetailedButSlowBranchInfoQueryInPrompt`
+
+## Configuration Entries
+
+### `shouldUseDetailedButSlowBranchInfoQueryInPrompt`
 
     This variable controls whether or not we shall use the `git-prompt.sh`.
 
@@ -143,6 +159,71 @@ There is only one configurable item at present:
     but only the `"yes"` means
     "yes please enable showing details of git branch state".
     It is allowed to be even omitted at all, which means `"no"`.
+
+
+
+### `rainbowPromptColorsAreInBackgroundButNotText`
+
+This entry controls whether colors are applied to texts or background.
+The default value is `'yes'`.
+
+When this entry is omitted, aka not defined,
+or this entry is defined as `'yes'`, the prompt looks like:
+![rainbowPromptColorsAreInBackgroundButNotText = 'yes'](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-256-colors.png "rainbowPromptColorsAreInBackgroundButNotText = 'yes'")
+
+When this entry is defined but the value is not `'yes'`, the prompt looks like:
+![rainbowPromptColorsAreInBackgroundButNotText != 'yes'](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-256-colors-in-text.png "rainbowPromptColorsAreInBackgroundButNotText != 'yes'")
+
+
+### `wlcRainbowPrompt256Colors_color[n]`
+
+There're 10 colors of this kind at present:
+```sh
+wlcRainbowPrompt256Colors_color1=210
+wlcRainbowPrompt256Colors_color2=216
+wlcRainbowPrompt256Colors_color3=229
+wlcRainbowPrompt256Colors_color4=120
+wlcRainbowPrompt256Colors_color5=49
+wlcRainbowPrompt256Colors_color6=87
+wlcRainbowPrompt256Colors_color7=45
+wlcRainbowPrompt256Colors_color8=39
+wlcRainbowPrompt256Colors_color9=69
+wlcRainbowPrompt256Colors_color10=63
+```
+
+They represent all colors used in the prompt chief part.
+And the alphabetical order or these variables name match
+the order of colors counting from left to right.
+
+
+### `wlcRainbowPrompt256Colors_colorGitBranchInfo[n]`
+
+There are 2 colors of this kind:
+```sh
+wlcRainbowPrompt256Colors_colorGitBranchInfo1=219
+wlcRainbowPrompt256Colors_colorGitBranchInfo2=223
+```
+
+-   The first color is used when the `rainbowPromptColorsAreInBackgroundButNotText`
+    is omitted or is `'yes'`;
+
+-   The second color is used when the `rainbowPromptColorsAreInBackgroundButNotText`
+    is **not** `'yes'`.
+
+> Note that this color is **always** applied to the git branch info string texts,
+> never the background.
+
+
+
+### `wlcRainbowPrompt256Colors_colorGitBranchInfoBrackets`
+
+This entry set the colors of those `[` and `]`
+around the git branch info string.
+
+> Note that this color is **always** applied to the `[` and `]` characters,
+> never the background.
+
+
 
 
 

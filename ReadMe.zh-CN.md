@@ -6,13 +6,21 @@
 
 作者：吴乐川 [wulechuan@live.com](mailto:wulechuan@live.com)
 
-![作者提供的示例（256 色模式下）](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-256-colors.png)  \
+![作者提供的示例1（256 色模式下）](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-256-colors.png)  \
 作者提供的示例（256 色模式下）
 
-![作者提供的示例（16 色模式下）](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-16-colors.png)  \
+<br>
+
+![作者提供的示例2（256 色模式下）](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-256-colors-in-text.png)  \
+作者提供的示例2（256 色模式下）
+
+<br>
+
+![作者提供的示例3（16 色模式下）](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-16-colors.png)  \
 作者提供的示例（16 色模式下），色值表已被自定义，因此看起来较艳丽。
 
------
+<br>
+
 
 本工具用以在兼容 Bash 的【命令行环境】构建如图所示的彩色【命令提示符】。
 
@@ -101,17 +109,79 @@ git 分支最新的状态细节。这将导致 Bash 命令提示符的显示明�
 
 # 按需配置
 
+## 配置文件
+
 本工具的配置文件为
 ```sh
-<本代码仓库>/~/bash-rainbow-prompt/config.sh
+<本代码仓库>/~/bash-rainbow-prompt/configurations.sh
 ```
-目前，仅有一个配置项：
+其中有若干【可配置项】，修订这些项的取值，可改变【提示符】的外观。
 
--  `shouldUseDetailedButSlowBranchInfoQueryInPrompt`
 
-    该变量用于控制是否借助 `git-prompt.sh` 来显示当前 git 分支的状态细节。
+## 可配置项
 
-    允许的取值：任何值均可。其中，仅【`yes`】代表“启用‘显示 git 分支状态细节’的功能”。该变量亦可被省略（即【无定义】），此时等同于【非 `yes`】值。
+### `shouldUseDetailedButSlowBranchInfoQueryInPrompt`
+
+该变量用于控制是否借助 `git-prompt.sh` 来显示当前 git 分支的状态细节。
+
+允许的取值：任何值均可。其中，仅【`yes`】代表“启用‘显示 git 分支状态细节’的功能”。该变量亦可被省略（即【无定义】），此时等同于【非 `yes`】值。
+
+
+### `rainbowPromptColorsAreInBackgroundButNotText`
+
+该项控制【提示符】的着色方式。如果省略，则默认值为 `'yes'`。
+
+当该值省略（未定义）时，或其取值为 `'yes'` 时，效果如下图所示：
+![rainbowPromptColorsAreInBackgroundButNotText = 'yes'](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-256-colors.png "rainbowPromptColorsAreInBackgroundButNotText = 'yes'")
+
+当该值**不**取 `'yes'` 时，效果如下图所示：
+![rainbowPromptColorsAreInBackgroundButNotText != 'yes'](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-256-colors-in-text.png "rainbowPromptColorsAreInBackgroundButNotText != 'yes'")
+
+
+### `wlcRainbowPrompt256Colors_color[n]`
+
+目前有 10 个这样的颜色配置项：
+```sh
+wlcRainbowPrompt256Colors_color1=210
+wlcRainbowPrompt256Colors_color2=216
+wlcRainbowPrompt256Colors_color3=229
+wlcRainbowPrompt256Colors_color4=120
+wlcRainbowPrompt256Colors_color5=49
+wlcRainbowPrompt256Colors_color6=87
+wlcRainbowPrompt256Colors_color7=45
+wlcRainbowPrompt256Colors_color8=39
+wlcRainbowPrompt256Colors_color9=69
+wlcRainbowPrompt256Colors_color10=63
+```
+
+它们依次代表【提示符】从左至右采用的 10 种颜色。
+
+
+### `wlcRainbowPrompt256Colors_colorGitBranchInfo[n]`
+
+目前有 2 个这样的颜色配置项：
+```sh
+wlcRainbowPrompt256Colors_colorGitBranchInfo1=219
+wlcRainbowPrompt256Colors_colorGitBranchInfo2=223
+```
+
+-   其中 1 号颜色用于 `rainbowPromptColorsAreInBackgroundButNotText`
+    被省略（不定义）或取值为 `'yes'` 的情形；
+
+-   2 号颜色用于 `rainbowPromptColorsAreInBackgroundButNotText`
+    取值不为 `'yes'` 的情形。
+
+
+> 该两种颜色，不论哪一种被采用，均仅应用于 git 分支信息的【文字】，而不用于背景。
+
+
+### `wlcRainbowPrompt256Colors_colorGitBranchInfoBrackets`
+
+用于控制 git 分支信息两旁的方括号的颜色。
+
+> 该颜色总是用于方括号字符上，不会用于方括号的背景。
+
+
 
 
 

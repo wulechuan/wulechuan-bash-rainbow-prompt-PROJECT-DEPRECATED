@@ -1,8 +1,3 @@
-envIsWSL=0
-envIsLinux=0
-envIsCygwin=0
-envIsGitBash=0
-
 function getCurrentUserName {
     local currentUserName=$USERNAME
 
@@ -14,6 +9,13 @@ function getCurrentUserName {
 }
 
 function detectEnv {
+    export envIsWSL=0
+    export envIsLinux=0
+    export envIsCygwin=0
+    export envIsGitBash=0
+    export envIsVSCode=0
+
+
     if [[ `uname -a` =~ Linux.*Microsoft ]]; then
         envIsWSL=1
     elif [ `uname` = Linux ]; then
@@ -23,6 +25,16 @@ function detectEnv {
     elif [[ `uname` =~ MINGW64_NT ]]; then
         envIsGitBash=1
     fi
+
+    local termProgram=`echo $TERM_PROGRAM`
+
+    if [ ! -z "$termProgram" ]; then
+        if [ $termProgram = vscode ]; then
+            envIsVSCode=1
+        fi
+    fi
 }
+
+
 
 detectEnv

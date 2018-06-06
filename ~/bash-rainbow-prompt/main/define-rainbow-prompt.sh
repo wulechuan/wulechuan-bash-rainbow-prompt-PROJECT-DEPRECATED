@@ -104,7 +104,7 @@ function wlc-setup-rainbow-prompt {
 
 
 		PS1=$PS1`clear-color`'\n'
-		PS1=$PS1'$ '                                                  # last prompt sign: $<space>
+		PS1=$PS1'> '                                                  # last prompt sign: $<space>
 		PS1=$PS1`clear-color`
 	}
 
@@ -133,7 +133,7 @@ function wlc-setup-rainbow-prompt {
 
 
 		PS1=$PS1`clear-color`'\n'
-		PS1=$PS1'$ '                                          # last prompt sign: $<space>
+		PS1=$PS1'> '                                          # last prompt sign: $<space>
 		PS1=$PS1`clear-color`
 	}
 

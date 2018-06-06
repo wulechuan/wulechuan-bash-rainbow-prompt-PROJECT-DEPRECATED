@@ -162,17 +162,17 @@ to customize the look of your prompt.
 
 
 
-### `rainbowPromptColorsAreInBackgroundButNotText`
+### `wlcRainbowPromptColorsAreInBackgroundButNotTexts`
 
 This entry controls whether colors are applied to texts or background.
 The default value is `'yes'`.
 
 When this entry is omitted, aka not defined,
 or this entry is defined as `'yes'`, the prompt looks like:
-![rainbowPromptColorsAreInBackgroundButNotText = 'yes'](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-256-colors.png "rainbowPromptColorsAreInBackgroundButNotText = 'yes'")
+![wlcRainbowPromptColorsAreInBackgroundButNotTexts = 'yes'](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-256-colors.png "wlcRainbowPromptColorsAreInBackgroundButNotTexts = 'yes'")
 
 When this entry is defined but the value is not `'yes'`, the prompt looks like:
-![rainbowPromptColorsAreInBackgroundButNotText != 'yes'](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-256-colors-in-text.png "rainbowPromptColorsAreInBackgroundButNotText != 'yes'")
+![wlcRainbowPromptColorsAreInBackgroundButNotTexts != 'yes'](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-256-colors-in-text.png "wlcRainbowPromptColorsAreInBackgroundButNotTexts != 'yes'")
 
 
 ### `wlcRainbowPrompt256Colors_color[n]`
@@ -204,10 +204,10 @@ wlcRainbowPrompt256Colors_colorGitBranchInfo1=219
 wlcRainbowPrompt256Colors_colorGitBranchInfo2=223
 ```
 
--   The first color is used when the `rainbowPromptColorsAreInBackgroundButNotText`
+-   The first color is used when the `wlcRainbowPromptColorsAreInBackgroundButNotTexts`
     is omitted or is `'yes'`;
 
--   The second color is used when the `rainbowPromptColorsAreInBackgroundButNotText`
+-   The second color is used when the `wlcRainbowPromptColorsAreInBackgroundButNotTexts`
     is **not** `'yes'`.
 
 > Note that this color is **always** applied to the git branch info string texts,

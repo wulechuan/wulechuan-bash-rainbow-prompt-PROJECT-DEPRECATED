@@ -12,7 +12,7 @@ shouldUseDetailedButSlowBranchInfoQueryInPrompt="no"
 
 
 
-rainbowPromptColorsAreInBackgroundButNotText="yes" # default is "yes"
+wlcRainbowPromptColorsAreInBackgroundButNotTexts="yes" # default is "yes"
 
 
 

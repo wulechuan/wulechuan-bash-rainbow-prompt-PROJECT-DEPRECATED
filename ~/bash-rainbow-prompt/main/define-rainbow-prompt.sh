@@ -172,7 +172,7 @@ function wlc-setup-rainbow-prompt {
 
 
 	local shouldUse16ColorsPrompt=0
-	[ ${rainbowPromptColorsAreInBackgroundButNotText:='yes'} ]
+	[ ${wlcRainbowPromptColorsAreInBackgroundButNotTexts:='yes'} ]
 
 
 
@@ -196,13 +196,13 @@ function wlc-setup-rainbow-prompt {
 
 
 	if [ $shouldUse16ColorsPrompt = 1 ]; then
-		if [ $rainbowPromptColorsAreInBackgroundButNotText = yes ]; then
+		if [ $wlcRainbowPromptColorsAreInBackgroundButNotTexts = yes ]; then
 			export PROMPT_COMMAND='build_rainbow_prompt_with_git_branch_info_in_16_colors_and_make_colors_in_background';
 		else
 			export PROMPT_COMMAND='build_rainbow_prompt_with_git_branch_info_in_16_colors_and_make_colors_in_text';
 		fi
 	else
-		if [ $rainbowPromptColorsAreInBackgroundButNotText = yes ]; then
+		if [ $wlcRainbowPromptColorsAreInBackgroundButNotTexts = yes ]; then
 			export PROMPT_COMMAND='build_rainbow_prompt_with_git_branch_info_in_256_colors_and_make_colors_in_background'
 		else
 			export PROMPT_COMMAND='build_rainbow_prompt_with_git_branch_info_in_256_colors_and_make_colors_in_text'

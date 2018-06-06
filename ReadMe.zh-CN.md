@@ -127,15 +127,15 @@ git 分支最新的状态细节。这将导致 Bash 命令提示符的显示明�
 允许的取值：任何值均可。其中，仅【`yes`】代表“启用‘显示 git 分支状态细节’的功能”。该变量亦可被省略（即【无定义】），此时等同于【非 `yes`】值。
 
 
-### `rainbowPromptColorsAreInBackgroundButNotText`
+### `wlcRainbowPromptColorsAreInBackgroundButNotTexts`
 
 该项控制【提示符】的着色方式。如果省略，则默认值为 `'yes'`。
 
 当该值省略（未定义）时，或其取值为 `'yes'` 时，效果如下图所示：
-![rainbowPromptColorsAreInBackgroundButNotText = 'yes'](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-256-colors.png "rainbowPromptColorsAreInBackgroundButNotText = 'yes'")
+![wlcRainbowPromptColorsAreInBackgroundButNotTexts = 'yes'](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-256-colors.png "wlcRainbowPromptColorsAreInBackgroundButNotTexts = 'yes'")
 
 当该值**不**取 `'yes'` 时，效果如下图所示：
-![rainbowPromptColorsAreInBackgroundButNotText != 'yes'](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-256-colors-in-text.png "rainbowPromptColorsAreInBackgroundButNotText != 'yes'")
+![wlcRainbowPromptColorsAreInBackgroundButNotTexts != 'yes'](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-256-colors-in-text.png "wlcRainbowPromptColorsAreInBackgroundButNotTexts != 'yes'")
 
 
 ### `wlcRainbowPrompt256Colors_color[n]`
@@ -165,10 +165,10 @@ wlcRainbowPrompt256Colors_colorGitBranchInfo1=219
 wlcRainbowPrompt256Colors_colorGitBranchInfo2=223
 ```
 
--   其中 1 号颜色用于 `rainbowPromptColorsAreInBackgroundButNotText`
+-   其中 1 号颜色用于 `wlcRainbowPromptColorsAreInBackgroundButNotTexts`
     被省略（不定义）或取值为 `'yes'` 的情形；
 
--   2 号颜色用于 `rainbowPromptColorsAreInBackgroundButNotText`
+-   2 号颜色用于 `wlcRainbowPromptColorsAreInBackgroundButNotTexts`
     取值不为 `'yes'` 的情形。
 
 

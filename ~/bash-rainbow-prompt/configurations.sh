@@ -16,16 +16,16 @@ wlcRainbowPromptColorsAreInBackgroundButNotTexts="yes" # default is "yes"
 
 
 
-wlcRainbowPrompt256Colors_color1=210
-wlcRainbowPrompt256Colors_color2=216
-wlcRainbowPrompt256Colors_color3=229
-wlcRainbowPrompt256Colors_color4=120
-wlcRainbowPrompt256Colors_color5=49
-wlcRainbowPrompt256Colors_color6=87
-wlcRainbowPrompt256Colors_color7=45
-wlcRainbowPrompt256Colors_color8=39
-wlcRainbowPrompt256Colors_color9=69
-wlcRainbowPrompt256Colors_color10=63
-wlcRainbowPrompt256Colors_colorGitBranchInfo1=219 # for prompt whos colors are in background
-wlcRainbowPrompt256Colors_colorGitBranchInfo2=223 # for prompt whos colors are in texts
-wlcRainbowPrompt256Colors_colorGitBranchInfoBrackets=246
+wlcRainbowPrompt_256Colored_color1=210
+wlcRainbowPrompt_256Colored_color2=216
+wlcRainbowPrompt_256Colored_color3=229
+wlcRainbowPrompt_256Colored_color4=120
+wlcRainbowPrompt_256Colored_color5=49
+wlcRainbowPrompt_256Colored_color6=87
+wlcRainbowPrompt_256Colored_color7=45
+wlcRainbowPrompt_256Colored_color8=39
+wlcRainbowPrompt_256Colored_color9=69
+wlcRainbowPrompt_256Colored_color10=63
+wlcRainbowPrompt_256Colored_gitBranchInfoColor1=219 # for prompt whos colors are in background
+wlcRainbowPrompt_256Colored_gitBranchInfoColor2=223 # for prompt whos colors are in texts
+wlcRainbowPrompt_256Colored_gitBranchInfoBracketsColor=246

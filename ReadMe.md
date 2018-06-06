@@ -175,20 +175,20 @@ When this entry is defined but the value is not `'yes'`, the prompt looks like:
 ![wlcRainbowPromptColorsAreInBackgroundButNotTexts != 'yes'](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-256-colors-in-text.png "wlcRainbowPromptColorsAreInBackgroundButNotTexts != 'yes'")
 
 
-### `wlcRainbowPrompt256Colors_color[n]`
+### `wlcRainbowPrompt_256Colored_color[n]`
 
 There're 10 colors of this kind at present:
 ```sh
-wlcRainbowPrompt256Colors_color1=210
-wlcRainbowPrompt256Colors_color2=216
-wlcRainbowPrompt256Colors_color3=229
-wlcRainbowPrompt256Colors_color4=120
-wlcRainbowPrompt256Colors_color5=49
-wlcRainbowPrompt256Colors_color6=87
-wlcRainbowPrompt256Colors_color7=45
-wlcRainbowPrompt256Colors_color8=39
-wlcRainbowPrompt256Colors_color9=69
-wlcRainbowPrompt256Colors_color10=63
+wlcRainbowPrompt_256Colored_color1=210
+wlcRainbowPrompt_256Colored_color2=216
+wlcRainbowPrompt_256Colored_color3=229
+wlcRainbowPrompt_256Colored_color4=120
+wlcRainbowPrompt_256Colored_color5=49
+wlcRainbowPrompt_256Colored_color6=87
+wlcRainbowPrompt_256Colored_color7=45
+wlcRainbowPrompt_256Colored_color8=39
+wlcRainbowPrompt_256Colored_color9=69
+wlcRainbowPrompt_256Colored_color10=63
 ```
 
 They represent all colors used in the prompt chief part.
@@ -196,12 +196,12 @@ And the alphabetical order or these variables name match
 the order of colors counting from left to right.
 
 
-### `wlcRainbowPrompt256Colors_colorGitBranchInfo[n]`
+### `wlcRainbowPrompt_256Colored_colorGitBranchInfo[n]`
 
 There are 2 colors of this kind:
 ```sh
-wlcRainbowPrompt256Colors_colorGitBranchInfo1=219
-wlcRainbowPrompt256Colors_colorGitBranchInfo2=223
+wlcRainbowPrompt_256Colored_gitBranchInfoColor1=219
+wlcRainbowPrompt_256Colored_gitBranchInfoColor2=223
 ```
 
 -   The first color is used when the `wlcRainbowPromptColorsAreInBackgroundButNotTexts`
@@ -215,7 +215,7 @@ wlcRainbowPrompt256Colors_colorGitBranchInfo2=223
 
 
 
-### `wlcRainbowPrompt256Colors_colorGitBranchInfoBrackets`
+### `wlcRainbowPrompt_256Colored_gitBranchInfoBracketsColor`
 
 This entry set the colors of those `[` and `]`
 around the git branch info string.

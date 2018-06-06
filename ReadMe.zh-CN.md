@@ -138,31 +138,31 @@ git 分支最新的状态细节。这将导致 Bash 命令提示符的显示明�
 ![wlcRainbowPromptColorsAreInBackgroundButNotTexts != 'yes'](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-256-colors-in-text.png "wlcRainbowPromptColorsAreInBackgroundButNotTexts != 'yes'")
 
 
-### `wlcRainbowPrompt256Colors_color[n]`
+### `wlcRainbowPrompt_256Colored_color[n]`
 
 目前有 10 个这样的颜色配置项：
 ```sh
-wlcRainbowPrompt256Colors_color1=210
-wlcRainbowPrompt256Colors_color2=216
-wlcRainbowPrompt256Colors_color3=229
-wlcRainbowPrompt256Colors_color4=120
-wlcRainbowPrompt256Colors_color5=49
-wlcRainbowPrompt256Colors_color6=87
-wlcRainbowPrompt256Colors_color7=45
-wlcRainbowPrompt256Colors_color8=39
-wlcRainbowPrompt256Colors_color9=69
-wlcRainbowPrompt256Colors_color10=63
+wlcRainbowPrompt_256Colored_color1=210
+wlcRainbowPrompt_256Colored_color2=216
+wlcRainbowPrompt_256Colored_color3=229
+wlcRainbowPrompt_256Colored_color4=120
+wlcRainbowPrompt_256Colored_color5=49
+wlcRainbowPrompt_256Colored_color6=87
+wlcRainbowPrompt_256Colored_color7=45
+wlcRainbowPrompt_256Colored_color8=39
+wlcRainbowPrompt_256Colored_color9=69
+wlcRainbowPrompt_256Colored_color10=63
 ```
 
 它们依次代表【提示符】从左至右采用的 10 种颜色。
 
 
-### `wlcRainbowPrompt256Colors_colorGitBranchInfo[n]`
+### `wlcRainbowPrompt_256Colored_colorGitBranchInfo[n]`
 
 目前有 2 个这样的颜色配置项：
 ```sh
-wlcRainbowPrompt256Colors_colorGitBranchInfo1=219
-wlcRainbowPrompt256Colors_colorGitBranchInfo2=223
+wlcRainbowPrompt_256Colored_gitBranchInfoColor1=219
+wlcRainbowPrompt_256Colored_gitBranchInfoColor2=223
 ```
 
 -   其中 1 号颜色用于 `wlcRainbowPromptColorsAreInBackgroundButNotTexts`
@@ -175,7 +175,7 @@ wlcRainbowPrompt256Colors_colorGitBranchInfo2=223
 > 该两种颜色，不论哪一种被采用，均仅应用于 git 分支信息的【文字】，而不用于背景。
 
 
-### `wlcRainbowPrompt256Colors_colorGitBranchInfoBrackets`
+### `wlcRainbowPrompt_256Colored_gitBranchInfoBracketsColor`
 
 用于控制 git 分支信息两旁的方括号的颜色。
 

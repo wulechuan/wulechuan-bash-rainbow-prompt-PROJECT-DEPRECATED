@@ -36,6 +36,10 @@ function wlc-setup-rainbow-prompt {
 
 
 		local gitBranchInfo=`__git_ps1`
+		if [ $shouldUseDetailedButSlowBranchInfoQueryInPrompt = yes ]; then
+			gitBranchInfo=${gitBranchInfo:2:-1}
+		fi
+
 		if [ ! -z "$gitBranchInfo" ]; then
 			PS1=$PS1`clear-color`'\n'
 			PS1=$PS1"\e[38;5;${wlcRainbowPrompt_256Colored_gitBranchInfoBracketsColor}m["
@@ -66,6 +70,10 @@ function wlc-setup-rainbow-prompt {
 
 
 		local gitBranchInfo=`__git_ps1`
+		if [ $shouldUseDetailedButSlowBranchInfoQueryInPrompt = yes ]; then
+			gitBranchInfo=${gitBranchInfo:2:-1}
+		fi
+
 		if [ ! -z "$gitBranchInfo" ]; then
 			PS1=$PS1`clear-color`'\n'
 			PS1=$PS1"\e[38;5;${wlcRainbowPrompt_256Colored_gitBranchInfoBracketsColor}m["
@@ -94,6 +102,9 @@ function wlc-setup-rainbow-prompt {
 
 
 		local gitBranchInfo=`__git_ps1`
+		if [ $shouldUseDetailedButSlowBranchInfoQueryInPrompt = yes ]; then
+			gitBranchInfo=${gitBranchInfo:2:-1}
+		fi
 
 		if [ ! -z "$gitBranchInfo" ]; then
 			PS1=$PS1`clear-color`'\n'
@@ -123,6 +134,9 @@ function wlc-setup-rainbow-prompt {
 
 
 		local gitBranchInfo=`__git_ps1`
+		if [ $shouldUseDetailedButSlowBranchInfoQueryInPrompt = yes ]; then
+			gitBranchInfo=${gitBranchInfo:2:-1}
+		fi
 
 		if [ ! -z "$gitBranchInfo" ]; then
 			PS1=$PS1`clear-color`'\n'
@@ -152,8 +166,8 @@ function wlc-setup-rainbow-prompt {
 		tempShouldTryLoadGNU__git_ps1=0
 	fi
 
-	if [ $tempShouldTryLoadGNU__git_ps1 -eq 1 ] && [ -f "$rainbowPromptToolRootFolder/GNU-tools/git-prompt.sh" ]; then
-		source "$rainbowPromptToolRootFolder/GNU-tools/git-prompt.sh";
+	if [ $tempShouldTryLoadGNU__git_ps1 -eq 1 ] && [ -f "$wlcRainbowPromptToolRootFolder/GNU-tools/git-prompt.sh" ]; then
+		source "$wlcRainbowPromptToolRootFolder/GNU-tools/git-prompt.sh";
 	fi
 
 	local fountThe__git_ps1_function=`declare -f __git_ps1 > /dev/null; echo $?`

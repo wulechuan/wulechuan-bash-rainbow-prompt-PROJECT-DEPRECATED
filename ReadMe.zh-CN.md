@@ -6,20 +6,11 @@
 
 作者：吴乐川 [wulechuan@live.com](mailto:wulechuan@live.com)
 
-![作者提供的示例1（256 色模式下）](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-256-colors.png)  \
-作者提供的示例（256 色模式下）
+![作者提供的示例1（256 色模式下），衬底底色，形成彩虹条带。](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-256-colors.png)  \
+作者提供的示例（256 色模式下），衬底底色，形成彩虹条带。
 
 <br>
 
-![作者提供的示例2（256 色模式下）](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-256-colors-in-text.png)  \
-作者提供的示例2（256 色模式下）
-
-<br>
-
-![作者提供的示例3（16 色模式下）](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-16-colors.png)  \
-作者提供的示例（16 色模式下），色值表已被自定义，因此看起来较艳丽。
-
-<br>
 
 
 本工具用以在兼容 Bash 的【命令行环境】构建如图所示的彩色【命令提示符】。
@@ -131,12 +122,23 @@ git 分支最新的状态细节。这将导致 Bash 命令提示符的显示明�
 
 该项控制【提示符】的着色方式。如果省略，则默认值为 `'yes'`。
 
-当该值省略（未定义）时，或其取值为 `'yes'` 时，效果如下图所示：
-![wlcRainbowPromptColorsAreInBackgroundButNotTexts = 'yes'](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-256-colors.png "wlcRainbowPromptColorsAreInBackgroundButNotTexts = 'yes'")
+- 当该值省略（未定义）时，或其取值为 `'yes'` 时，效果如以下二图所示：
 
-当该值**不**取 `'yes'` 时，效果如下图所示：
-![wlcRainbowPromptColorsAreInBackgroundButNotTexts != 'yes'](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-256-colors-in-text.png "wlcRainbowPromptColorsAreInBackgroundButNotTexts != 'yes'")
+    - 256 色模式
+    ![256-colored; wlcRainbowPromptColorsAreInBackgroundButNotTexts = 'yes'](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-256-colors.png "256-colored; wlcRainbowPromptColorsAreInBackgroundButNotTexts = 'yes'")
 
+    - 16 色模式
+    ![16-colored; wlcRainbowPromptColorsAreInBackgroundButNotTexts = 'yes'](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-16-colors.png "16-colored; wlcRainbowPromptColorsAreInBackgroundButNotTexts = 'yes'")
+
+<br>
+
+- 当该值**不**取 `'yes'` 时，效果如以下二图所示：
+
+    - 256 色模式
+    ![256-colored; wlcRainbowPromptColorsAreInBackgroundButNotTexts != 'yes'](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-256-colors-in-text.png "256-colored; wlcRainbowPromptColorsAreInBackgroundButNotTexts != 'yes'")
+
+    - 16 色模式
+    ![16-colored; wlcRainbowPromptColorsAreInBackgroundButNotTexts != 'yes'](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-16-colors-in-text.png "16-colored; wlcRainbowPromptColorsAreInBackgroundButNotTexts = 'yes'")
 
 ### `wlcRainbowPrompt_256Colored_color[n]`
 

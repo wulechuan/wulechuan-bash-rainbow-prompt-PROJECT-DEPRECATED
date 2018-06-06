@@ -5,20 +5,10 @@
 Bring rainbows into your bash compatible environments.
 
 ![An example of mine in 256-colored terminal](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-256-colors.png)  \
-An example of mine in 256-colored terminal.
+An example of mine in 256-colored terminal. Colors are in background.
 
 <br>
 
-![An example of mine in 256-colored terminal](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-256-colors-in-text.png)  \
-An example of mine in 256-colored terminal. Colors are in texts instead of background.
-
-<br>
-
-![An example of mine in 16-colored terminal](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-16-colors.png)  \
-An example of mine in 16-colored terminal. Color palette has been customized.
-
-
-<br>
 
 
 This is a tool for building a colorful **prompt string** in
@@ -167,12 +157,24 @@ to customize the look of your prompt.
 This entry controls whether colors are applied to texts or background.
 The default value is `'yes'`.
 
-When this entry is omitted, aka not defined,
-or this entry is defined as `'yes'`, the prompt looks like:
-![wlcRainbowPromptColorsAreInBackgroundButNotTexts = 'yes'](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-256-colors.png "wlcRainbowPromptColorsAreInBackgroundButNotTexts = 'yes'")
+- When this entry is omitted, aka not defined,
+or this entry is defined as `'yes'`, the prompt looks like these pictures:
 
-When this entry is defined but the value is not `'yes'`, the prompt looks like:
-![wlcRainbowPromptColorsAreInBackgroundButNotTexts != 'yes'](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-256-colors-in-text.png "wlcRainbowPromptColorsAreInBackgroundButNotTexts != 'yes'")
+    - when in 256-colored mode
+    ![256-colored mode; wlcRainbowPromptColorsAreInBackgroundButNotTexts = 'yes'](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-256-colors.png "256-colored mode; wlcRainbowPromptColorsAreInBackgroundButNotTexts = 'yes'")
+
+    - when in 16-colored mode
+    ![16-colored mode; wlcRainbowPromptColorsAreInBackgroundButNotTexts = 'yes'](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-16-colors.png "16-colored mode; wlcRainbowPromptColorsAreInBackgroundButNotTexts = 'yes'")
+
+<br>
+
+- When this entry is defined but the value is not `'yes'`, the prompt looks like these pictures:
+
+    - when in 256-colored mode
+    ![256-colored mode; wlcRainbowPromptColorsAreInBackgroundButNotTexts != 'yes'](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-256-colors-in-text.png "256-colored mode; wlcRainbowPromptColorsAreInBackgroundButNotTexts != 'yes'")
+
+    - when in 16-colored mode
+    ![16-colored mode; wlcRainbowPromptColorsAreInBackgroundButNotTexts != 'yes'](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-16-colors-in-text.png "16-colored mode; wlcRainbowPromptColorsAreInBackgroundButNotTexts != 'yes'")
 
 
 ### `wlcRainbowPrompt_256Colored_color[n]`

@@ -50,7 +50,6 @@ function wlc-setup-rainbow-prompt {
 
 		PS1=$PS1`clear-color`'\n'   # New line
 		PS1=$PS1'> '                # last prompt sign: $<space>
-		PS1=$PS1`clear-color`
 	}
 
 	function build_rainbow_prompt_with_git_branch_info_in_256_colors_and_make_colors_in_text {
@@ -84,7 +83,6 @@ function wlc-setup-rainbow-prompt {
 
 		PS1=$PS1`clear-color`'\n'   # New line
 		PS1=$PS1'> '                # last prompt sign: $<space>
-		PS1=$PS1`clear-color`
 	}
 
 	function build_rainbow_prompt_with_git_branch_info_in_16_colors_and_make_colors_in_background {
@@ -116,7 +114,6 @@ function wlc-setup-rainbow-prompt {
 
 		PS1=$PS1`clear-color`'\n'
 		PS1=$PS1'> '                                                  # last prompt sign: $<space>
-		PS1=$PS1`clear-color`
 	}
 
 	function build_rainbow_prompt_with_git_branch_info_in_16_colors_and_make_colors_in_text {
@@ -148,7 +145,6 @@ function wlc-setup-rainbow-prompt {
 
 		PS1=$PS1`clear-color`'\n'
 		PS1=$PS1'> '                                          # last prompt sign: $<space>
-		PS1=$PS1`clear-color`
 	}
 
 

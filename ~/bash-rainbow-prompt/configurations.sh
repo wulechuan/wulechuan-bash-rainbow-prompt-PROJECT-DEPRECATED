@@ -7,12 +7,16 @@
 #
 # This variable below controls whether or not we shall use the `git-prompt.sh`.
 # Possible values: "yes" or non "yes"
-# Or is even omitted at all, which means non "yes".
+# Or is even omitted at all, which means non "yes". So default is "no".
 shouldUseDetailedButSlowBranchInfoQueryInPrompt="no"
 
 
 
-wlcRainbowPromptColorsAreInBackgroundButNotTexts="yes" # default is "yes"
+
+# This variable below controls whether or not we shall set colors to texts instead of background blocks.
+# Possible values: "yes" or non "yes"
+# Or is even omitted at all, which means "yes". So default is "yes".
+wlcRainbowPromptColorsAreInBackgroundButNotTexts="yes"
 
 
 
@@ -26,6 +30,6 @@ wlcRainbowPrompt_256Colored_color7=45
 wlcRainbowPrompt_256Colored_color8=39
 wlcRainbowPrompt_256Colored_color9=69
 wlcRainbowPrompt_256Colored_color10=63
-wlcRainbowPrompt_256Colored_gitBranchInfoColor1=219 # for prompt whos colors are in background
-wlcRainbowPrompt_256Colored_gitBranchInfoColor2=223 # for prompt whos colors are in texts
+wlcRainbowPrompt_256Colored_gitBranchInfoColor1=219 # for prompt whose colors are in background
+wlcRainbowPrompt_256Colored_gitBranchInfoColor2=223 # for prompt whose colors are in texts
 wlcRainbowPrompt_256Colored_gitBranchInfoBracketsColor=246

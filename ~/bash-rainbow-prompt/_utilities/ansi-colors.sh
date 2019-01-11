@@ -1,153 +1,206 @@
-function colorful {
-    # Usage:
-    # colorful "your string or $variable here" textBlack bgndCyan
+# See https://github.com/wulechuan/bash-colorful-strings
 
-    if [ -z "$1" ]; then
-        return
+clearColor='\e[0m'
+
+function colorful {
+    local endChar
+    if   [ "$1" == '--' ]; then
+        shift
+    elif [ "$1" == '-n' ]; then
+        endChar='\n'
+        shift
     fi
 
-    echo -e `set-color $2 $3`$1`clear-color`
+
+
+    if [ $# -eq 0 ]; then
+        return 0
+    fi
+
+
+
+    local rawString="$1"
+    shift
+
+
+
+    local colorEscapeString
+    get-echo-color    $*    colorEscapeString
+
+
+
+    local clearColorMark
+    if [ -z "$colorEscapeString" ]; then
+        clearColorMark=''          # 故意不做【清除颜色】的动作
+    else
+        clearColorMark=$clearColor # 应该清除颜色
+    fi
+
+
+
+    echo -en "${colorEscapeString}${rawString}${clearColorMark}${endChar}"
 }
 
-function set-color {
+function get-echo-color {
     local color1=
     local color2=
 
-    if [ -z "$1" ]; then
+    if [ $# -lt 2 ]; then # Too few arguments. At least 2 arguments are required.
         return
     fi
 
 
-    color1=$(map-color-name-into-ansi-code $1)
+    map-color-name-into-ansi-code-via-if-statements       $1   color1
 
-    if [ ! -z "$2" ]; then
-        color2=";`map-color-name-into-ansi-code $2`"
+
+    if [ $# -eq 2 ]; then
+        if [ ! -z "$color1" ]; then
+            eval "$2='\\'\"e[${color1}m\""
+        fi
+    else
+        map-color-name-into-ansi-code-via-if-statements   $2   color2
+
+        if [ ! -z "$color1" ] && [ ! -z "$color2" ]; then
+            eval "$3='\\'\"e[${color1};${color2}m\""
+
+        elif [ ! -z "$color1" ] || [ ! -z "$color2" ]; then
+            # There is no ';' below, because either of the colors will simply be empty.
+            eval "$3='\\'\"e[${color1}${color2}m\""
+        fi
     fi
-
-    echo -e "\033[${color1}${color2}m"
 }
 
-function clear-color {
-    echo -e "\033[0;0m";
+function set-echo-color {
+    local colorEscapeString
+    get-echo-color $* colorEscapeString
+    echo -e "$colorEscapeString"
 }
 
-function map-color-name-into-ansi-code() {
-    if [ -z "$1" ]; then
-        return
+function clear-echo-color {
+    echo -en $clearColor
+}
+
+function map-color-name-into-ansi-code-via-if-statements {
+    if [ -z "$1" ];                     then
+        eval $2=''
 
 
 
     # classical foreground colors
 
-    elif [ $1 == 'textBlack' ]; then
-        echo 30
+    elif [ $1 == 'textBlack' ];         then
+        eval $2=30
 
-    elif [ $1 == 'textRed' ]; then
-        echo 31
+    elif [ $1 == 'textRed' ];           then
+        eval $2=31
 
-    elif [ $1 == 'textGreen' ]; then
-        echo 32
+    elif [ $1 == 'textGreen' ];         then
+        eval $2=32
 
-    elif [ $1 == 'textYellow' ]; then
-        echo 33
+    elif [ $1 == 'textYellow' ];        then
+        eval $2=33
 
-    elif [ $1 == 'textBlue' ]; then
-        echo 34
+    elif [ $1 == 'textBlue' ];          then
+        eval $2=34
 
-    elif [ $1 == 'textMagenta' ]; then
-        echo 35
+    elif [ $1 == 'textMagenta' ];       then
+        eval $2=35
 
-    elif [ $1 == 'textCyan' ]; then
-        echo 36
+    elif [ $1 == 'textCyan' ];          then
+        eval $2=36
 
-    elif [ $1 == 'textWhite' ]; then
-        echo 37
+    elif [ $1 == 'textWhite' ];         then
+        eval $2=37
 
 
 
     # classical background colors
 
-    elif [ $1 == 'bgndBlack' ]; then
-        echo 40
+    elif [ $1 == 'bgndBlack' ];         then
+        eval $2=40
 
-    elif [ $1 == 'bgndRed' ]; then
-        echo 41
+    elif [ $1 == 'bgndRed' ];           then
+        eval $2=41
 
-    elif [ $1 == 'bgndGreen' ]; then
-        echo 42
+    elif [ $1 == 'bgndGreen' ];         then
+        eval $2=42
 
-    elif [ $1 == 'bgndYellow' ]; then
-        echo 43
+    elif [ $1 == 'bgndYellow' ];        then
+        eval $2=43
 
-    elif [ $1 == 'bgndBlue' ]; then
-        echo 44
+    elif [ $1 == 'bgndBlue' ];          then
+        eval $2=44
 
-    elif [ $1 == 'bgndMagenta' ]; then
-        echo 45
+    elif [ $1 == 'bgndMagenta' ];       then
+        eval $2=45
 
-    elif [ $1 == 'bgndCyan' ]; then
-        echo 46
+    elif [ $1 == 'bgndCyan' ];          then
+        eval $2=46
 
-    elif [ $1 == 'bgndWhite' ]; then
-        echo 47
+    elif [ $1 == 'bgndWhite' ];         then
+        eval $2=47
 
 
 
     # morden foreground colors
+    # modern colors are **not** supported by Microsoft VSCode terminal
 
-    elif [ $1 == 'textBrightBlack' ]; then
-        echo 90
+    elif [ $1 == 'textBrightBlack' ];   then
+        eval $2=90
 
-    elif [ $1 == 'textBrightRed' ]; then
-        echo 91
+    elif [ $1 == 'textBrightRed' ];     then
+        eval $2=91
 
-    elif [ $1 == 'textBrightGreen' ]; then
-        echo 92
+    elif [ $1 == 'textBrightGreen' ];   then
+        eval $2=92
 
-    elif [ $1 == 'textBrightYellow' ]; then
-        echo 99
+    elif [ $1 == 'textBrightYellow' ];  then
+        eval $2=99
 
-    elif [ $1 == 'textBrightBlue' ]; then
-        echo 94
+    elif [ $1 == 'textBrightBlue' ];    then
+        eval $2=94
 
     elif [ $1 == 'textBrightMagenta' ]; then
-        echo 95
+        eval $2=95
 
-    elif [ $1 == 'textBrightCyan' ]; then
-        echo 96
+    elif [ $1 == 'textBrightCyan' ];    then
+        eval $2=96
 
-    elif [ $1 == 'textBrightWhite' ]; then
-        echo 97
+    elif [ $1 == 'textBrightWhite' ];   then
+        eval $2=97
 
 
 
     # morden background colors
+    # modern colors are **not** supported by Microsoft VSCode terminal
 
-    elif [ $1 == 'bgndBrightBlack' ]; then
-        echo 100
+    elif [ $1 == 'bgndBrightBlack' ];   then
+        eval $2=100
 
-    elif [ $1 == 'bgndBrightRed' ]; then
-        echo 101
+    elif [ $1 == 'bgndBrightRed' ];     then
+        eval $2=101
 
-    elif [ $1 == 'bgndBrightGreen' ]; then
-        echo 102
+    elif [ $1 == 'bgndBrightGreen' ];   then
+        eval $2=102
 
-    elif [ $1 == 'bgndBrightYellow' ]; then
-        echo 103
+    elif [ $1 == 'bgndBrightYellow' ];  then
+        eval $2=103
 
-    elif [ $1 == 'bgndBrightBlue' ]; then
-        echo 1010
+    elif [ $1 == 'bgndBrightBlue' ];    then
+        eval $2=104
 
     elif [ $1 == 'bgndBrightMagenta' ]; then
-        echo 105
+        eval $2=105
 
-    elif [ $1 == 'bgndBrightCyan' ]; then
-        echo 106
+    elif [ $1 == 'bgndBrightCyan' ];    then
+        eval $2=106
 
-    elif [ $1 == 'bgndBrightWhite' ]; then
-        echo 107
+    elif [ $1 == 'bgndBrightWhite' ];   then
+        eval $2=107
 
 
+    else
+        eval $2=''
 
 
     fi

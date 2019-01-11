@@ -1,6 +1,15 @@
 <link rel="stylesheet" href="./docs/styles/markdown-preview-in-ms-vscode.css">
 
-# Introduction
+# Wulechuan's Rainbow Bash Prompt
+
+
+## 简体中文指南（Chinese Simplified Version of ReadMe）
+
+中文版《使用指南》[在此](./ReadMe.zh-CN.md)。
+
+
+
+## Introduction
 
 Bring rainbows into your bash compatible environments.
 
@@ -25,22 +34,12 @@ or Microsoft PowerShell for Linux.
 Because the syntax of either CMD or PowerShell is completely
 different from that of a Bash compatible environment.
 
-<br>
-
-Author: 吴乐川 (Wu Lechuan) [wulechuan@live.com](mailto:wulechuan@live.com)
-
-
-
-
-# Chinese Version of this Document
-
-中文文档[在此](./ReadMe.zh-CN.md)。
 
 
 
 
 
-# Features
+## Features
 
 1.  The chief part of the prompt string happens to be
     an SSH connection string. So you can just copy
@@ -53,7 +52,7 @@ Author: 吴乐川 (Wu Lechuan) [wulechuan@live.com](mailto:wulechuan@live.com)
 4.  Beautiful (but your might NOT agree with that).
 
 
-# Installation
+## Installation
 
 1.  Copy the entire `bash-rainbow-prompt` folder to your bash
     `~` folder (or "directory" if you prefer).
@@ -90,7 +89,7 @@ Author: 吴乐川 (Wu Lechuan) [wulechuan@live.com](mailto:wulechuan@live.com)
         exec bash -l
         ```
 
-# About `git-prompt.sh`
+## About `git-prompt.sh`
 
 When you are working in your Bash environment,
 this tool of mine optionally allows you to see some nice details
@@ -127,9 +126,9 @@ providing details of a git branch, it **CAN** be very slow in situations.
 
 
 
-# Configuration
+## Configuration
 
-## The Configuration File
+### The Configuration File
 The only configuration file of this tool is:
 ```sh
 <This Repository>/~/bash-rainbow-prompt/configurations.sh
@@ -139,20 +138,22 @@ You may put some configuration entries in the file
 to customize the look of your prompt.
 
 
-## Configuration Entries
-
-### `shouldUseDetailedButSlowBranchInfoQueryInPrompt`
-
-    This variable controls whether or not we shall use the `git-prompt.sh`.
-
-    Possible values: any value is allowed,
-    but only the `"yes"` means
-    "yes please enable showing details of git branch state".
-    It is allowed to be even omitted at all, which means `"no"`.
+### Configuration Entries
 
 
+#### `shouldUseDetailedButSlowBranchInfoQueryInPrompt`
 
-### `wlcRainbowPromptColorsAreInBackgroundButNotTexts`
+This variable controls whether or not we shall use the `git-prompt.sh`.
+
+Possible values: any value is allowed, but only the `'yes'` means
+"yes please enable showing details of git branch state".
+It is allowed to be even omitted at all, which means `'no'`.
+
+
+
+
+
+#### `wlcRainbowPromptColorsAreInBackgroundButNotTexts`
 
 This entry controls whether colors are applied to texts or background.
 The default value is `'yes'`.
@@ -177,7 +178,11 @@ or this entry is defined as `'yes'`, the prompt looks like these pictures:
     ![16-colored mode; wlcRainbowPromptColorsAreInBackgroundButNotTexts != 'yes'](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-16-colors-in-text.png "16-colored mode; wlcRainbowPromptColorsAreInBackgroundButNotTexts != 'yes'")
 
 
-### `wlcRainbowPrompt_256Colored_color[n]`
+
+
+
+
+#### `wlcRainbowPrompt_256Colored_color[n]`
 
 There're 10 colors of this kind at present:
 ```sh
@@ -198,7 +203,11 @@ And the alphabetical order or these variables name match
 the order of colors counting from left to right.
 
 
-### `wlcRainbowPrompt_256Colored_colorGitBranchInfo[n]`
+
+
+
+
+#### `wlcRainbowPrompt_256Colored_colorGitBranchInfo[n]`
 
 There are 2 colors of this kind:
 ```sh
@@ -217,7 +226,11 @@ wlcRainbowPrompt_256Colored_gitBranchInfoColor2=223
 
 
 
-### `wlcRainbowPrompt_256Colored_gitBranchInfoBracketsColor`
+
+
+
+
+#### `wlcRainbowPrompt_256Colored_gitBranchInfoBracketsColor`
 
 This entry set the colors of those `[` and `]`
 around the git branch info string.
@@ -230,7 +243,7 @@ around the git branch info string.
 
 
 
-# See Also
+## See Also
 
 -   The source code of the `git-prompt.sh`:
     https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
@@ -241,9 +254,9 @@ around the git branch info string.
 
 
 
-# Appendix
+## Appendix
 
-## Color Palette
+### Color Palette
 
 This tool also comes with a customized color palette, which
 is meant to used in an 8-colored (but provides 16 colors in fact)
@@ -262,7 +275,7 @@ Because the built-in color table is not adjustable there.
 
 
 
-### How to use (apply) a color palette
+#### How to use (apply) a color palette
 
 The way to apply a color palette file varies according to the target environments.
 Some can utilize the provided `.minttyrc` file directly
@@ -271,7 +284,7 @@ located in the correct folder.
 Others can not,
 so you have to apply color values one by one manually.
 
-#### Use the color palette file in Cygwin for Windows
+##### Use the color palette file in Cygwin for Windows
 
 1.  Copy the **entire `~/.mintty` folder** to
     inside of your own `~` folder.
@@ -297,7 +310,7 @@ so you have to apply color values one by one manually.
 
 
 
-#### Use the color palette in Windows Console
+##### Use the color palette in Windows Console
 
 Althought my `bash-rainbow-prompt` tool does **NOT** apply
 to Microsoft Windows CMD or PowerShell, the color palette
@@ -319,3 +332,13 @@ And if applied, both the CMD and the PowerShell are effected.
     > the `Console Properties` dialog.
 5.  Press `OK` button to save your modifications.
     Immediately you see changes in colors.
+
+
+
+
+## License
+
+| Item         | Content                                         |
+| ------------ | ----------------------------------------------- |
+| Author       | [wulechuan@live.com](mailto:wulechuan@live.com) |
+| License Type | [WTFPL](http://www.wtfpl.net)                   |

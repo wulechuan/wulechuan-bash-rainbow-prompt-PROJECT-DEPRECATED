@@ -1,6 +1,10 @@
 <link rel="stylesheet" href="./docs/styles/markdown-preview-in-ms-vscode.css">
 
-# 概述
+# 乐川的 Bash 彩虹提示符
+
+
+
+## 概述
 
 令 Bash 类环境拥有彩虹般美丽的命令提示符。
 
@@ -29,22 +33,22 @@ PowerShell。因为 CMD 与 PowerShell 二者的的语法与 Bash 大相径庭�
 > 控制台】作为二者的输入输出界面。毕竟，计算机软件领域“内”与“外”的概念往往仅是借喻罢了。
 
 
-# 特色
+## 特色
 
-1.  【提示符】的字符串【主体】恰好是创建【ssh】连接所须的字符串，便于命令行用户构建【ssh】连接。
+1.  该【提示符】的字符串【主体】恰好是创建【ssh】连接所须的字符串，便于命令行用户构建【ssh】连接。
 2.  显示日期和时间戳，以便追踪历史命令。
 3.  独特的彩色条带，在命令历史记录之间形成天然的视觉分隔带，便于终端用户回溯历史时，借助视觉本能加速探寻信息。
 4.  美观（但这很主观，每个人看法不尽相同）。
 
 
-# 安装
+## 安装
 
 1.  将整【本项目仓库内的 `~` 文件夹】内的 `bash-rainbow-prompt` 文件夹复制到系统或模拟器环境的 `~` 文件夹下。
 
 2.  如果 `~` 文件夹下不存在 `.bash_profile` 则创建之。
     > 注意文件名要以英文句点 `.` 开头。
 
-3. 编辑 `~/.bash_profile` 文件，在其中加入以下语句：
+3. 编辑 `~/.bash_profile` 文件，在其中加入（不妨添加于末尾）以下语句：
 
     ```sh
     source ~/bash-rainbow-prompt/load.sh
@@ -70,7 +74,7 @@ PowerShell。因为 CMD 与 PowerShell 二者的的语法与 Bash 大相径庭�
 
 
 
-# 关于 `git-prompt.sh`
+## 关于 `git-prompt.sh`
 
 本工具提供“显示 git 分支状态细节”的选项，但该功能须借助知名的工具—— `git-prompt.sh`。
 `git-prompt.sh` 这一工具的许可协议为 GNU GPL
@@ -98,9 +102,9 @@ git 分支最新的状态细节。这将导致 Bash 命令提示符的显示明�
 
 
 
-# 按需配置
+## 按需配置
 
-## 配置文件
+### 配置文件
 
 本工具的配置文件为
 ```sh
@@ -109,16 +113,19 @@ git 分支最新的状态细节。这将导致 Bash 命令提示符的显示明�
 其中有若干【可配置项】，修订这些项的取值，可改变【提示符】的外观。
 
 
-## 可配置项
+### 可配置项
 
-### `shouldUseDetailedButSlowBranchInfoQueryInPrompt`
+
+#### `shouldUseDetailedButSlowBranchInfoQueryInPrompt`
 
 该变量用于控制是否借助 `git-prompt.sh` 来显示当前 git 分支的状态细节。
 
 允许的取值：任何值均可。其中，仅【`yes`】代表“启用‘显示 git 分支状态细节’的功能”。该变量亦可被省略（即【无定义】），此时等同于【非 `yes`】值。
 
 
-### `wlcRainbowPromptColorsAreInBackgroundButNotTexts`
+
+
+#### `wlcRainbowPromptColorsAreInBackgroundButNotTexts`
 
 该项控制【提示符】的着色方式。如果省略，则默认值为 `'yes'`。
 
@@ -140,7 +147,11 @@ git 分支最新的状态细节。这将导致 Bash 命令提示符的显示明�
     - 16 色模式
     ![16-colored; wlcRainbowPromptColorsAreInBackgroundButNotTexts != 'yes'](./docs/illustrates/bash-rainbow-prompt-example-wulechuan-16-colors-in-text.png "16-colored; wlcRainbowPromptColorsAreInBackgroundButNotTexts = 'yes'")
 
-### `wlcRainbowPrompt_256Colored_color[n]`
+
+
+
+
+#### `wlcRainbowPrompt_256Colored_color[n]`
 
 目前有 10 个这样的颜色配置项：
 ```sh
@@ -159,7 +170,11 @@ wlcRainbowPrompt_256Colored_color10=63
 它们依次代表【提示符】从左至右采用的 10 种颜色。
 
 
-### `wlcRainbowPrompt_256Colored_colorGitBranchInfo[n]`
+
+
+
+
+#### `wlcRainbowPrompt_256Colored_colorGitBranchInfo[n]`
 
 目前有 2 个这样的颜色配置项：
 ```sh
@@ -177,9 +192,13 @@ wlcRainbowPrompt_256Colored_gitBranchInfoColor2=223
 > 该两种颜色，不论哪一种被采用，均仅应用于 git 分支信息的【文字】，而不用于背景。
 
 
-### `wlcRainbowPrompt_256Colored_gitBranchInfoBracketsColor`
 
-用于控制 git 分支信息两旁的方括号的颜色。
+
+
+
+#### `wlcRainbowPrompt_256Colored_gitBranchInfoBracketsColor`
+
+用于控制 git 分支信息两旁的【方括号】的颜色。
 
 > 该颜色总是用于方括号字符上，不会用于方括号的背景。
 
@@ -188,7 +207,7 @@ wlcRainbowPrompt_256Colored_gitBranchInfoColor2=223
 
 
 
-# 参见
+## 参见
 
 -   `git-prompt.sh` 源文件：
     https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
@@ -261,3 +280,13 @@ wlcRainbowPrompt_256Colored_gitBranchInfoColor2=223
     > Windows 控制台中各色块【自左至右】的顺序吻合。
 
 1.  点击【确定】按钮，以保存色彩配置。随即可见 Windows 控制台中，各内容的颜色变更。
+
+
+
+
+## 许可证
+
+| 类目       | 内容                                            |
+| ---------- | ----------------------------------------------- |
+| 作者       | [wulechuan@live.com](mailto:wulechuan@live.com) |
+| 许可证类型 | [WTFPL](http://www.wtfpl.net)                   |

@@ -9,4 +9,4 @@
 
 ## Introduction
 
-This tool has moved to [wulechuan-rainbow-prompt-strings](https://github.com/wulechuan/wulechuan-rainbow-prompt-strings), as a part of it.
+This tool has moved to [wulechuan-rainbow-prompt-strings](https://github.com/wulechuan/wulechuan-rainbow-prompt-strings/blob/master/ReadMe.en-US.md), as a part of it.
